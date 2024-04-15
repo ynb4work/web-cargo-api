@@ -22,7 +22,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(schema = "web_cargo", name = "order")
-public class Order {
+public class Orders {
 
     @Id
     @GeneratedValue
@@ -41,12 +41,12 @@ public class Order {
     private Units units;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "product")
-    private Product product;
+    @Column(name = "products")
+    private Products products;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "legalentity")
-    private LegalEntity legalEntity;
+    @Column(name = "legalentities")
+    private LegalEntities legalEntities;
 
     @Column(name = "counterparty")
     private String counterParty;
@@ -68,5 +68,4 @@ public class Order {
 
     @Column(name = "descriptions")
     private String descriptions;
-
 }
