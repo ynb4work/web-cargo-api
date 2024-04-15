@@ -45,8 +45,8 @@ public class Order {
     private Product product;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "typesoflegalentity")
-    private TypesOfLegalEntity typesOfLegalEntity;
+    @Column(name = "types-legal-registry")
+    private TypesLegalRegistry typesLegalRegistry;
 
     @Column(name = "counterparty")
     private String counterParty;
