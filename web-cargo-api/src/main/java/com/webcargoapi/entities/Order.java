@@ -30,6 +30,7 @@ public class Order {
     private UUID uuid;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "datefield")
     private LocalDate dateField;
 
     @Column(name = "quantity")
@@ -44,7 +45,7 @@ public class Order {
     private Product product;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "legalEntity")
+    @Column(name = "legalentity")
     private LegalEntity legalEntity;
 
     @Column(name = "counterparty")
