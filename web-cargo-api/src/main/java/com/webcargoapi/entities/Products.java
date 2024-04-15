@@ -1,6 +1,6 @@
 package com.webcargoapi.entities;
 
-public enum Product {
+public enum Products {
     STONES,
     SAND,
     ASPHALT
