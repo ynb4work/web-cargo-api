@@ -22,7 +22,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(schema = "web_cargo", name = "order")
-public class Orders {
+public class Order {
 
     @Id
     @GeneratedValue
@@ -30,23 +30,23 @@ public class Orders {
     private UUID uuid;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "datefield")
-    private LocalDate dateField;
+    @Column(name = "local_date")
+    private LocalDate localDate;
 
     @Column(name = "quantity")
     private Double quantity;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "units")
-    private Units units;
+    @Column(name = "unit")
+    private Unit unit;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "products")
-    private Products products;
+    @Column(name = "product")
+    private Product product;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "legalentities")
-    private LegalEntities legalEntities;
+    @Column(name = "types_legal_registry")
+    private TypesLegalRegistry typesLegalRegistry;
 
     @Column(name = "counterparty")
     private String counterParty;
@@ -54,8 +54,8 @@ public class Orders {
     @Column(name = "unloading_addresses")
     private String unloadingAddresses;
 
-    @Column(name = "maps_location")
-    private String mapsLocation;
+    @Column(name = "map_location")
+    private String mapLocation;
 
     @Column(name = "phone_number_consignee")
     private String phoneNumberConsignee;
@@ -68,4 +68,5 @@ public class Orders {
 
     @Column(name = "descriptions")
     private String descriptions;
+
 }

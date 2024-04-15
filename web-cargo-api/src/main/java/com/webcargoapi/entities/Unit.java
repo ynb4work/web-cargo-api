@@ -1,6 +1,7 @@
 package com.webcargoapi.entities;
 
-public enum Units {
+public enum Unit {
+
     TN,
     PCS,
     M3
