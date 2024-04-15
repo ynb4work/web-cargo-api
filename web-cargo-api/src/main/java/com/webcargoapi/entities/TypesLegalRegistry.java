@@ -1,7 +1,8 @@
 package com.webcargoapi.entities;
 
-public enum LegalEntities {
-    TOB,
+public enum TypesLegalRegistry {
+
+    TOV,
     PP,
     FOP
 }
