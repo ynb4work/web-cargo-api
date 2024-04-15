@@ -30,37 +30,37 @@ public class Order {
     private UUID uuid;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "datefield")
-    private LocalDate dateField;
+    @Column(name = "localdate")
+    private LocalDate localDate;
 
     @Column(name = "quantity")
     private Double quantity;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "units")
-    private Units units;
+    @Column(name = "unit")
+    private Unit unit;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "product")
     private Product product;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "legalentity")
-    private LegalEntity legalEntity;
+    @Column(name = "typesoflegalentity")
+    private TypesOfLegalEntity typesOfLegalEntity;
 
     @Column(name = "counterparty")
     private String counterParty;
 
-    @Column(name = "unloading_addresses")
+    @Column(name = "unloading-addresses")
     private String unloadingAddresses;
 
-    @Column(name = "maps_location")
-    private String mapsLocation;
+    @Column(name = "map-location")
+    private String mapLocation;
 
-    @Column(name = "phone_number_consignee")
+    @Column(name = "phone-number-consignee")
     private String phoneNumberConsignee;
 
-    @Column(name = "full_name")
+    @Column(name = "full-name")
     private String fullName;
 
     @Column(name = "cost")
@@ -68,5 +68,4 @@ public class Order {
 
     @Column(name = "descriptions")
     private String descriptions;
-
 }
