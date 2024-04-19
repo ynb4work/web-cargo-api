@@ -1,16 +1,12 @@
 package com.webcargoapi.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -25,12 +21,12 @@ import java.util.UUID;
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id")
-    private UUID uuid;
+    private UUID id;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "local_date")
     private LocalDate localDate;
 
     @Column(name = "quantity")
@@ -38,21 +34,21 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "unit")
-    private Unit unit;
+    private Units unit;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "product")
     private Product product;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "types_legal_registry")
-    private TypesLegalRegistry typesLegalRegistry;
+    @Column(name = "legal_entity")
+    private LegalEntity legalEntity;
 
     @Column(name = "counterparty")
-    private String counterParty;
+    private String counterparty;
 
-    @Column(name = "unloading_addresses")
-    private String unloadingAddresses;
+    @Column(name = "unloading_address")
+    private String unloadingAddress;
 
     @Column(name = "map_location")
     private String mapLocation;
@@ -68,5 +64,4 @@ public class Order {
 
     @Column(name = "descriptions")
     private String descriptions;
-
 }
